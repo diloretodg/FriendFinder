@@ -1,9 +1,10 @@
 // API Routs
 // ============================================ //
-var friends = require('../data/friends');
+var friendsArr = require('../data/friends');
 
 module.exports = function(app) {
     // API GET Requests
+// console.log(friendsArr)
   
     app.get("/api/friends", function(req, res) {
         return res.json(friendsArr);
@@ -12,7 +13,7 @@ module.exports = function(app) {
     app.get("/api/friends/:friend", function(req, res) {
         var chosen = req.params.friend;
         
-        console.log(chosen);
+        // console.log(chosen);
         
         for (var i = 0; i < friends.length; i++) {
             if (chosen === friends[i].name) {

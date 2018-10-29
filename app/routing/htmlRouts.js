@@ -1,23 +1,5 @@
 // // HTML Routs
-// // ============================================ //
-// var express = require("express");
-// var path = require("path");
-// var app = express();
-// $(function() {
-//   setListeners();
-// });
 
-
-// // app.get("/", function(req, res) {
-// //     res.sendFile(path.join(__dirname, "home.html"));
-// //   });
-// function setListeners(){
-//   $(document).on('click', '.submit', function(){
-//     app.get("/survey", function(req, res) {
-//       res.sendFile(path.join(__dirname, "survey.html"));
-//     });
-//   })  
-// } 
 // ===============================================================================
 // DEPENDENCIES
 // We need to include the path package to get the correct file path for our html
@@ -36,11 +18,11 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname +'/app/public', "survey.html"));
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
     });
 
   // If no matching route is found default to home
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname +'/app/public', "home.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };

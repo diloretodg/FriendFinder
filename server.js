@@ -11,43 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // API Routs
 // ============================================ //
-var friends = require('./app/data/friends.js');
-var friendsArr = friends.friendsArr;
-console.log(friends.friendsArr)
 
-app.get("/api/friends", function(req, res) {
-  return res.json(friendsArr);
-});
-
-app.get("/api/friends/:friend", function(req, res) {
-  var chosen = req.params.friend;
-  
-  console.log(chosen);
-  
-  for (var i = 0; i < friends.length; i++) {
-      if (chosen === friends[i].name) {
-          return res.json(friends[i]);
-      }
-  }
-  
-  return res.json(false);
-});
-
-app.post("/api/friends", function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newFriend = req.body;
-  
-  // Using a RegEx Pattern to remove spaces from newfriend
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-  newFriend.name;
-  console.log(newFriend);
-  
-  friends.push(newFriend);
-  
-  res.json(newFriend);
-});
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname +'/app/public', "home.html"));
 });
@@ -56,6 +20,11 @@ app.get("/survey", function(req, res) {
 res.sendFile(path.join(__dirname +'/app/public', "survey.html"));
 });
 
+// $(document).on('click', 'submit', function(){
+//   app.get("/survey", function(req, res) {
+//     res.sendFile(path.join(__dirname, "survey.html"));
+//   });
+// })  
 // Sets up the Express App
 // =============================================================
 var friendsArr = [
@@ -92,6 +61,9 @@ var friendsArr = [
     ],
   },
 ]
+
+require("./app/routing/apiRouts")(app);
+require("./app/routing/htmlRouts")(app);
 
 // Starts the server to begin listening
 // =============================================================

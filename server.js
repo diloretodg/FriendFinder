@@ -9,13 +9,9 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Use the express.static middleware to serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(__dirname + "/public"));
-// var htmlRouts = require('./app/routing/htmlRouts.js');
-// var apiRoutsRec = require('./app/routing/apiRouts.js');
 // API Routs
 // ============================================ //
-var friends = require('./app/data/friends');
+var friends = require('./app/data/friends.js');
 var friendsArr = friends.friendsArr;
 console.log(friends.friendsArr)
 
@@ -29,7 +25,7 @@ app.get("/api/friends/:friend", function(req, res) {
   console.log(chosen);
   
   for (var i = 0; i < friends.length; i++) {
-      if (chosen === friends[i].routeName) {
+      if (chosen === friends[i].name) {
           return res.json(friends[i]);
       }
   }
@@ -45,20 +41,20 @@ app.post("/api/friends", function(req, res) {
   // Using a RegEx Pattern to remove spaces from newfriend
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-  
+  newFriend.name;
   console.log(newFriend);
   
   friends.push(newFriend);
   
   res.json(newFriend);
 });
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname'./app/', "home.html"));
-// });
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname +'/app/public', "home.html"));
+});
 
-// app.get("/survey", function(req, res) {
-// res.sendFile(path.join('./app/', "survey.html"));
-// });
+app.get("/survey", function(req, res) {
+res.sendFile(path.join(__dirname +'/app/public', "survey.html"));
+});
 
 // Sets up the Express App
 // =============================================================
@@ -74,6 +70,22 @@ var friendsArr = [
       5,
       1,
       2,
+      5,
+      4,
+      1
+    ],
+  },
+  {
+    name:"Ahmed 2",
+    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    scores:[
+      4,
+      1,
+      4,
+      4,
+      5,
+      1,
+      1,
       5,
       4,
       1

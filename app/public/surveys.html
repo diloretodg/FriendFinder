@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder Survey</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Finder: Survey</h1>
+      <h3>Take a survey and find you best friend match!</h3>
+      <hr>
+    </div>
+        <div class="card">
+          <div class="card-header">
+            <h3><strong>Friend Survey</strong></h3>
+          </div>
+          <div class="card-body">
+            <form>
+              <div id="survey">
+                <div class="form-group">
+                    <label for="friend_profile_name">Your Name </label>
+                    <input type='text'class="form-control" id='name' placeholder="Your Name for friend profile">  
+                    <label for="image_url">Image URL</label>
+                    <input type="url" class="form-control" id="photo" placeholder="Image URL for friend profile">
+                    </div>
+                    <div id="survey-questions">
+                      <div id='q1' class="form-group">
+                        <label for="q1choice">Q1.) You enjoy silently watching movies rather than talk through movies</label>
+                        <select class="form-control" id="q1choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q2' class="form-group">
+                        <label for="q2choice">Q2.) You are a clean and organized person</label>
+                        <select class="form-control" id="q2choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q3' class="form-group">
+                        <label for="q3choice">Q3.) You love trying new foods even if they seem weird to you</label>
+                        <select class="form-control" id="q3choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q4' class="form-group">
+                        <label for="q4choice">Q4.) You enjoy going out with friends</label>
+                        <select class="form-control" id="q4choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q5' class="form-group">
+                        <label for="q5choice">Q5.) Best things are shared with friends.</label>
+                        <select class="form-control" id="q5choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q6' class="form-group">
+                        <label for="q6choice">Q6.) You are considered a loyal and trustworthy person.</label>
+                        <select class="form-control" id="q6choice">
+                          <option value=""></option>
+                          <option value= 1>Strongly Disagree (1)</option>
+                          <option value= 2>Disagree (2)</option>
+                          <option value= 3>Neither Agree or Disagree (3)</option>
+                          <option value= 4>Agree (4)</option>
+                          <option value= 5>Strongly Agree (5)</option>
+                        </select>
+                      </div>
+                      <div id='q7' class="form-group">
+                          <label for="q7choice">Q7.) A good friend has your back especially if you are in trouble</label>
+                          <select class="form-control" id="q7choice">
+                            <option value=""></option>
+                            <option value= 1>Strongly Disagree (1)</option>
+                            <option value= 2>Disagree (2)</option>
+                            <option value= 3>Neither Agree or Disagree (3)</option>
+                            <option value= 4>Agree (4)</option>
+                            <option value= 5>Strongly Agree (5)</option>
+                          </select>
+                        </div>
+                        <div id='q8' class="form-group">
+                          <label for="q8choice">Q8.) A good friend definitely has your back especially if there is trouble</label>
+                          <select class="form-control" id="q8choice">
+                            <option value=""></option>
+                            <option value= 1>Strongly Disagree (1)</option>
+                            <option value= 2>Disagree (2)</option>
+                            <option value= 3>Neither Agree or Disagree (3)</option>
+                            <option value= 4>Agree (4)</option>
+                            <option value= 5>Strongly Agree (5)</option>
+                          </select>
+                        </div>
+                        <div id='q9' class="form-group">
+                            <label for="q9choice">Q9.) Best freinds are found through surveys</label>
+                            <select class="form-control" id="q9choice">
+                                <option value=""></option>
+                              <option value= 1>Strongly Disagree (1)</option>
+                              <option value= 2>Disagree (2)</option>
+                              <option value= 3>Neither Agree or Disagree (3)</option>
+                              <option value= 4>Agree (4)</option>
+                              <option value= 5>Strongly Agree (5)</option>
+                            </select>
+                          </div>
+                          <div id='q10' class="form-group">
+                            <label for="q10choice">Q10.) Surveys work best when you tell the truth</label>
+                            <select class="form-control" id="q10choice">
+                              <option value=""></option>
+                              <option value= 1>Strongly Disagree (1)</option>
+                              <option value= 2>Disagree (2)</option>
+                              <option value= 3>Neither Agree or Disagree (3)</option>
+                              <option value= 4>Agree (4)</option>
+                              <option value= 5>Strongly Agree (5)</option>
+                            </select>
+                          </div>
+                          <!-- Submit Button -->
+                          <a id='addSurveyEntry' class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Find your New Best Friend!</a>
+                            <!--Best Friend Modal-->
+                    <div id="bestFriendModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" style="text-align: center">Your New Best Friend!</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <h2 id="bestFriend"></h2>
+                                    <img id="bestFriendPhoto" src="#" style="max-width:400px; max-height:400px">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>  
+    </div>
+  </div>
+ 
+
+  <script type= "text/javascript">
+  //////////////retrieves info from form
+  $(document).on("click", '#addSurveyEntry', function(event) {
+    console.log('click');
+    event.preventDefault();
+      // Form validation
+  function validateForm() {
+    var isValid = true;
+    $(".form-control").each(function() {
+      if ($(this).val() === "") {
+        isValid = false;
+      }
+    });
+
+    $(".chosen-select").each(function() {
+
+      if ($(this).val() === "") {
+        isValid = false;
+      }
+    });
+    return isValid;
+  }
+
+   // If all required fields are filled
+   if (validateForm()) {
+    var newFriend = {
+      name: $("#name").val(),
+      photo: $("#image_url").val(),
+      scores: [
+        $('#q1choice').val(),
+        $('#q2choice').val(),
+        $('#q3choice').val(),
+        $('#q4choice').val(),
+        $('#q5choice').val(),
+        $('#q6choice').val(),
+        $('#q7choice').val(),
+        $('#q8choice').val(),
+        $('#q9choice').val(),
+        $('#q10choice').val(),
+      ]
+    }    // AJAX post the data to the friends API.
+    $.post("/api/friends", newFriend, function(data) {
+
+      //Updates the bestFriend name/photo and toggles the best friend modal on posting the new userData
+      $("#bestFriend").text(data.name);
+      $("#bestFriendPhoto").attr("src", data.photo);
+      $("#bestFriendModal").modal("toggle");
+
+    });
+  } else {
+    alert("Please fill out all fields before submitting!");
+  };
+    console.log(newFriend)
+    $.post("../api/friends", newFriend)
+      .then(function(data) {
+        console.log(data);
+      });
+  });
+
+  
+     // Capture the form inputs
+   $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        $(".chosen-select").each(function() {
+
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+
+      // If all required fields are filled
+      if (validateForm()) {
+        // Create an object for the user"s data
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
+        };
+
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) {
+
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
